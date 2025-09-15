@@ -1,6 +1,6 @@
 'use client'
 export default function MainLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
