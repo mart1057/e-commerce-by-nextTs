@@ -1,15 +1,19 @@
 'use client'
 
-import BaseLayout from '@/components/BaseLayout'
-
+import { NavigationMenu } from '@/components/Navigation'
 export default function MainLayout({
   children
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div>
-      <main>{children}</main>
+    <div className="grid grid-cols-12">
+      <div className="col-span-12 bg-gray-100">
+        <NavigationMenu />
+      </div>
+      <div className="col-span-12">
+        {children}
+      </div>
     </div>
   )
 }
