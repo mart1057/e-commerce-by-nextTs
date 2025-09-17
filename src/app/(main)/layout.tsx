@@ -1,19 +1,29 @@
 'use client'
 
 import { NavigationMenuDemo } from '@/components/Navigation'
+import { Footer } from '@/components/Footer'
+
 export default function MainLayout({
-  children
+  children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div className="grid grid-cols-12">
-      <div className="col-span-12">
+    <div className="flex min-h-screen flex-col">
+      {/* Header */}
+      <header className="w-full">
         <NavigationMenuDemo />
-      </div>
-      <div className="col-span-12">
+      </header>
+
+      {/* Main content */}
+      <main className="flex-1 w-full">
         {children}
-      </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="w-full">
+        <Footer />
+      </footer>
     </div>
   )
 }
