@@ -11,7 +11,7 @@ import { ProductItem } from '@/components/home/product-item'
 
 export function ProductItemList() {
   return (
-    <div className="grid grid-cols-12 bg-gray-100 gap-4">
+    /*<div className="grid grid-cols-12 bg-gray-100 gap-4">
       <div className="col-span-6 md:col-span-3">
         <ProductItem />
       </div>
@@ -22,14 +22,16 @@ export function ProductItemList() {
         <ProductItem />
       </div>
       <div className="col-span-6 md:col-span-3">
+        <ProductItem />
+      </div>
+    </div>*/
+    <div className="overflow-x-auto bg-gray-100 p-4">
+      <div className="grid grid-flow-col auto-cols-[50%] md:grid-cols-4 md:auto-cols-auto gap-4">
+        <ProductItem />
+        <ProductItem />
+        <ProductItem />
         <ProductItem />
       </div>
     </div>
-    // <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-100">
-    //     <ProductItem />
-    //     <ProductItem />
-    //     <ProductItem />
-    //     <ProductItem />
-    // </div>
   )
 }
