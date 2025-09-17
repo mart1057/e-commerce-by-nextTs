@@ -58,7 +58,7 @@ export function NavigationMenuDemo() {
         <div>
           <Menu className="lg:hidden mr-4" size={28} />
         </div>
-        SHOP.CO
+        LOGO
       </div>
       <nav className="col-span-6 hidden lg:flex lg:col-span-3">
         <NavigationMenu viewport={false}>
