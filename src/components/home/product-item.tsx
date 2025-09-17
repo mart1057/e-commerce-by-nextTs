@@ -11,24 +11,39 @@ import {
   CardHeader
   // CardTitle
 } from '@/components/ui/card'
-import { Label } from '@/components/ui/label'
-import shirt1 from '@/components/home/images/shirt1.png'
+import { RatingStars } from '@/components/home/rate-star'
+// import { Label } from '@/components/ui/label'
+import { Product } from '@/types/product'
+type ProductItemProps = {
+  p: Product
+}
+export function ProductItem({ p }: ProductItemProps) {
+  const discountedPrice: number =
+    p.discount > 0 ? Math.round((p.price * p.discount) / 100) : p.price
 
-export function ProductItem() {
   return (
     <div className="grid grid-cols-12">
       <div className="col-span-12 bg-gray-100">
-        <Card className='size-full'>
-          <CardHeader className='justify-center'>
+        <Card className="size-full">
+          <CardHeader className="justify-center">
             {/* <CardTitle>Card Title</CardTitle> */}
             {/* <CardDescription>Card Description</CardDescription>
             <CardAction>Card Action</CardAction> */}
-            <Image src={shirt1} alt="T-shirt product" />
+            <Image src={p.image} alt={p.name} />
           </CardHeader>
           <CardContent>
-            <p className='font-bold text-xl'>T-SHIRT WITH TAPE DETAILS</p>
-            <Label htmlFor="star">ดาว ดาว ดาว ดาว ดาว</Label>
-            <p className='font-bold text-xl'>$120</p>
+            <p className="font-bold text-l capitalize">{p.name}</p>
+            <RatingStars value={p.rate} max={p.rate_total} />
+            {p.discount > 0 ? (
+              <p className="font-bold">
+                <span className=" ">${discountedPrice}</span>
+                <span className="line-through text-gray-400 pl-2">
+                  ${p.price}
+                </span>
+              </p>
+            ) : (
+              <p className="">${p.price}</p>
+            )}
           </CardContent>
           {/* <CardFooter>
             <p>Card Footer</p>
