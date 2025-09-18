@@ -3,6 +3,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { CircleUserRound, ShoppingCart, Search, Menu } from 'lucide-react'
+import { useAppSelector } from '@/store'
 
 import {
   NavigationMenu,
@@ -52,6 +53,7 @@ const components: { title: string; href: string; description: string }[] = [
   }
 ]
 export function NavigationMenuDemo() {
+  const items = useAppSelector((state) => state.cart.items)
   return (
     <header className="h-[65px] grid grid-cols-12 items-center px-4 lg:px-8 border-b">
       <div className="col-span-6 lg:col-span-2 flex items-center font-extrabold text-[20px] lg:text-[24px]">
@@ -110,8 +112,10 @@ export function NavigationMenuDemo() {
       <div className="col-span-6 lg:col-span-2 flex items-center justify-end gap-4">
         <Search className="lg:hidden" size={28} />
         <CircleUserRound size={28} />
-        <div className='relative'>
-          <div className='absolute bottom-4 left-4 text-white font-bold bg-orange-600 rounded-[20px] w-[30px] h-[20px] flex items-center justify-center text-[14px]'>4</div>
+        <div className="relative">
+          <div className="absolute bottom-4 left-4 text-white font-bold bg-orange-600 rounded-[20px] w-[30px] h-[20px] flex items-center justify-center text-[14px]">
+            {items.length}
+          </div>
           <ShoppingCart size={28} />
         </div>
       </div>
