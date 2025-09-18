@@ -21,7 +21,7 @@ export default function MainLayout({
       </main>
 
       {/* Footer */}
-      <footer className="w-full">
+      <footer className="w-full mt-14 md:mt-60">
         <Footer />
       </footer>
     </div>

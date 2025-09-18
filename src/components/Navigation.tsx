@@ -3,6 +3,7 @@
 import * as React from 'react'
 import Link from 'next/link'
 import { CircleUserRound, ShoppingCart, Search, Menu } from 'lucide-react'
+import { useAppSelector } from '@/store'
 
 import {
   NavigationMenu,
@@ -52,24 +53,24 @@ const components: { title: string; href: string; description: string }[] = [
   }
 ]
 export function NavigationMenuDemo() {
+  const items = useAppSelector((state) => state.cart.items)
   return (
     <header className="h-[65px] grid grid-cols-12 items-center px-4 lg:px-8 border-b">
-      <div className="col-span-6 lg:col-span-2 flex items-center font-extrabold text-[20px] lg:text-[24px]">
+      <div className="col-span-4 lg:col-span-1 flex items-center font-extrabold text-[20px] lg:text-[24px]">
         <div>
           <Menu className="lg:hidden mr-4" size={28} />
         </div>
         LOGO
       </div>
-      <nav className="col-span-6 hidden lg:flex lg:col-span-3">
+      <nav className="col-span-6 hidden lg:flex lg:col-span-4">
         <NavigationMenu viewport={false}>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Home</NavigationMenuTrigger>
-              <NavigationMenuContent>
-              </NavigationMenuContent>
+              <NavigationMenuTrigger>Shop</NavigationMenuTrigger>
+              <NavigationMenuContent></NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+              <NavigationMenuTrigger>On Sale</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-2 md:w-[500px] lg:grid-cols-2 lg:w-[600px]">
                   {components.map((component) => (
@@ -89,13 +90,21 @@ export function NavigationMenuDemo() {
                 asChild
                 className={navigationMenuTriggerStyle()}
               >
-                <Link href="/docs">Docs</Link>
+                <Link href="/docs">New Arrivals</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+              <NavigationMenuItem>
+              <NavigationMenuLink
+                asChild
+                className={navigationMenuTriggerStyle()}
+              >
+                <Link href="/docs">Brands</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </nav>
-      <div className="hidden lg:flex col-span-4 ml-8">
+      <div className="hidden lg:flex col-span-5 ml-8">
         <div className="relative w-full">
           <Search
             className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
@@ -108,10 +117,15 @@ export function NavigationMenuDemo() {
           />
         </div>
       </div>
-      <div className="col-span-6 lg:col-span-2 flex items-center justify-end gap-4">
+      <div className="col-span-8 lg:col-span-2 flex items-center justify-end gap-4 mr-4">
         <Search className="lg:hidden" size={28} />
         <CircleUserRound size={28} />
-        <ShoppingCart size={28} />
+        <div className="relative">
+          <div className="absolute bottom-4 left-4 text-white font-bold bg-orange-600 rounded-[20px] w-[30px] h-[20px] flex items-center justify-center text-[14px]">
+            {items.length}
+          </div>
+          <ShoppingCart size={28} />
+        </div>
       </div>
     </header>
   )
