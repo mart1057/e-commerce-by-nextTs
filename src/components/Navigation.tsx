@@ -117,7 +117,7 @@ export function NavigationMenuDemo() {
           />
         </div>
       </div>
-      <div className="col-span-6 lg:col-span-2 flex items-center justify-center gap-4">
+      <div className="col-span-8 lg:col-span-2 flex items-center justify-end gap-4 mr-4">
         <Search className="lg:hidden" size={28} />
         <CircleUserRound size={28} />
         <div className="relative">
