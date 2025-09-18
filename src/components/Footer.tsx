@@ -43,15 +43,15 @@ export function Footer() {
       {/* Footer */}
       <div
         className="
-          grid grid-cols-12 bg-[#F0F0F0] px-4 pb-10 pt-12 relative z-0
-          lg:pt-40
-        "
+    grid grid-cols-12 bg-[#F0F0F0] px-4 pb-10 pt-12 relative z-0
+    lg:pt-40
+  "
       >
         <div className="col-start-1 md:col-start-2 col-span-12 md:col-span-10">
-          <div className="grid grid-cols-10 gap-y-8 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-y-8 md:gap-6">
             {/* Logo + description */}
-            <div className="col-span-12 sm:col-span-6 md:col-span-2">
-              <div className="text-[32px] md:text-[48px] font-extrabold">
+            <div className="flex flex-col">
+              <div className="font-extrabold text-[32px] md:text-[40px]">
                 LOGO
               </div>
               <div className="text-gray-700 text-sm md:text-base mt-2">
@@ -75,7 +75,7 @@ export function Footer() {
             </div>
 
             {/* Columns */}
-            <div className="col-span-6 md:col-span-2 flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <div className="text-[18px] font-semibold">Company</div>
               <div className="text-gray-600">About</div>
               <div className="text-gray-600">Features</div>
@@ -83,7 +83,7 @@ export function Footer() {
               <div className="text-gray-600">Career</div>
             </div>
 
-            <div className="col-span-6 md:col-span-2 flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <div className="text-[18px] font-semibold">Help</div>
               <div className="text-gray-600">Customer Support</div>
               <div className="text-gray-600">Delivery Details</div>
@@ -91,7 +91,7 @@ export function Footer() {
               <div className="text-gray-600">Privacy Policy</div>
             </div>
 
-            <div className="col-span-6 md:col-span-2 flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <div className="text-[18px] font-semibold">FAQ</div>
               <div className="text-gray-600">Account</div>
               <div className="text-gray-600">Manage Deliveries</div>
@@ -99,7 +99,7 @@ export function Footer() {
               <div className="text-gray-600">Payments</div>
             </div>
 
-            <div className="col-span-6 md:col-span-2 flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <div className="text-[18px] font-semibold">Resources</div>
               <div className="text-gray-600">Free eBooks</div>
               <div className="text-gray-600">Development Tutorial</div>

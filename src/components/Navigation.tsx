@@ -65,8 +65,7 @@ export function NavigationMenuDemo() {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Home</NavigationMenuTrigger>
-              <NavigationMenuContent>
-              </NavigationMenuContent>
+              <NavigationMenuContent></NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Components</NavigationMenuTrigger>
@@ -111,7 +110,10 @@ export function NavigationMenuDemo() {
       <div className="col-span-6 lg:col-span-2 flex items-center justify-end gap-4">
         <Search className="lg:hidden" size={28} />
         <CircleUserRound size={28} />
-        <ShoppingCart size={28} />
+        <div className='relative'>
+          <div className='absolute bottom-4 left-4 text-white font-bold bg-orange-600 rounded-[20px] w-[30px] h-[20px] flex items-center justify-center text-[14px]'>4</div>
+          <ShoppingCart size={28} />
+        </div>
       </div>
     </header>
   )
