@@ -4,45 +4,49 @@ import { Mail, Instagram, Facebook, Twitter, Github } from 'lucide-react'
 
 export function Footer() {
   return (
-    <div className="md:mt-[190px]">
-      <div className="md:px-4 ">
-        <div className="grid grid-cols-12">
-          <div className="col-start-1 col-span-12 md:col-span-10">
-            <div
-              className="bg-black grid grid-cols-12 md:rounded-[15px] min-h-[200px] 
-  text-white p-6 md:p-10 gap-6 
-  md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 
-  w-full md:w-[80%] max-w-[1200px]"
-            >
-              <div className="col-span-12 md:col-span-6 flex justify-center md:justify-start items-center text-center md:text-left text-2xl md:text-4xl font-extrabold leading-snug">
-                STAY UP TO DATE ABOUT <br className="hidden md:block" /> OUR
-                LATEST OFFERS
-              </div>
+    <div className="relative">
+      {/* ก้อนดำ */}
+      <div
+        className="
+          bg-black grid grid-cols-12 rounded-[15px] min-h-[200px] 
+          text-white p-6 md:p-10 gap-6 w-[90%] max-w-[1200px] mx-auto
+          lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:-top-40 z-20
+        "
+      >
+        {/* Left text */}
+        <div className="col-span-12 md:col-span-6 flex justify-center md:justify-start items-center text-center md:text-left text-xl md:text-4xl font-extrabold leading-snug">
+          STAY UP TO DATE ABOUT <br className="hidden md:block" /> OUR
+          <br className="md:hidden" /> LATEST OFFERS
+        </div>
 
-              {/* Right form */}
-              <div className="col-span-12 md:col-span-6 flex flex-col justify-center items-center md:items-end gap-4">
-                <div className="w-full max-w-[400px]">
-                  <div className="relative w-full">
-                    <Mail
-                      className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                      size={18}
-                    />
-                    <Input
-                      type="text"
-                      placeholder="Enter your email address"
-                      className="pl-10 rounded-[50px] w-full h-[40px] bg-white text-black"
-                    />
-                  </div>
-                </div>
-                <Button className="w-full max-w-[400px] rounded-[50px] bg-white h-[40px] text-black">
-                  Subscribe to Newsletter
-                </Button>
-              </div>
+        {/* Right form */}
+        <div className="col-span-12 md:col-span-6 flex flex-col justify-center items-center md:items-end gap-4 mt-6 md:mt-0">
+          <div className="w-full max-w-[400px]">
+            <div className="relative w-full">
+              <Mail
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                size={18}
+              />
+              <Input
+                type="text"
+                placeholder="Enter your email address"
+                className="pl-10 rounded-[50px] w-full h-[40px] bg-white text-black"
+              />
             </div>
           </div>
+          <Button className="w-full max-w-[400px] rounded-[50px] bg-white h-[40px] text-black">
+            Subscribe to Newsletter
+          </Button>
         </div>
       </div>
-      <div className="grid grid-cols-12 bg-[#F0F0F0] px-4 py-10 pt-12">
+
+      {/* Footer */}
+      <div
+        className="
+          grid grid-cols-12 bg-[#F0F0F0] px-4 pb-10 pt-12 relative z-0
+          lg:pt-40
+        "
+      >
         <div className="col-start-1 md:col-start-2 col-span-12 md:col-span-10">
           <div className="grid grid-cols-10 gap-y-8 md:gap-6">
             {/* Logo + description */}
